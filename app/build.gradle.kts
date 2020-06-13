@@ -1,9 +1,11 @@
 import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+import de.mannodermaus.gradle.plugins.junit5.junitPlatform
 
 plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("kapt")
+    id("de.mannodermaus.android-junit5")
 }
 
 android {
@@ -40,6 +42,14 @@ android {
         isAbortOnError = true
     }
 
+    testOptions {
+        junitPlatform {
+            filters {
+                includeEngines("spek2")
+            }
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -59,7 +69,7 @@ android {
 }
 
 dependencies {
-    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.3.72")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.72")
     implementation("androidx.appcompat:appcompat:1.1.0")
     implementation("androidx.core:core-ktx:1.3.0")
     implementation("android.arch.lifecycle:extensions:1.1.1")
@@ -96,4 +106,11 @@ dependencies {
     testImplementation("junit:junit:4.13")
     androidTestImplementation("androidx.test.ext:junit:1.1.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
+    testImplementation("org.jetbrains.kotlin:kotlin-reflect:1.3.72")
+    testImplementation("org.jetbrains.kotlin:kotlin-test:1.3.72")
+    testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
+    testImplementation("org.mockito:mockito-inline:2.13.0")
+
+    testImplementation("org.spekframework.spek2:spek-dsl-jvm:2.0.11")
+    testImplementation("org.spekframework.spek2:spek-runner-junit5:2.0.11")
 }
