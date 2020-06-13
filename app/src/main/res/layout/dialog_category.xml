@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/radio_group"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/radio_popular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="@string/popular" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/radio_upcoming"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="@string/upcoming" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/radio_top_rated"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="@string/top_rated" />
+
+    <com.google.android.material.radiobutton.MaterialRadioButton
+        android:id="@+id/radio_now_playing"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:text="@string/now_playing" />
+</RadioGroup>

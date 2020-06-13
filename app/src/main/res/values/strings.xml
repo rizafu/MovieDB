@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Movie DB</string>
+    <string name="try_again">Try Again</string>
+    <string name="movie_not_found">Movie not found</string>
+    <string name="unauthorized">Unauthorized</string>
+    <string name="you_have_not_favorite_movies">You have not favorite movies</string>
+    <string name="something_wrong">Something wrong</string>
+    <string name="connection_problem">Connection problem</string>
+    <string name="night_mode">night mode</string>
+    <string name="review_by">Review by</string>
+    <string name="favorite">Favorite</string>
+    <string name="category">Category</string>
+    <string name="popular">Popular</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="now_playing">Now Playing</string>
+</resources>
