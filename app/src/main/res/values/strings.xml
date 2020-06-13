@@ -3,7 +3,7 @@
     <string name="try_again">Try Again</string>
     <string name="movie_not_found">Movie not found</string>
     <string name="unauthorized">Unauthorized</string>
-    <string name="you_have_not_favorite_movies">You have not favorite movies</string>
+    <string name="you_have_not_favorite_movies">You don\'t have any favorite movies yet</string>
     <string name="something_wrong">Something wrong</string>
     <string name="connection_problem">Connection problem</string>
     <string name="night_mode">night mode</string>
