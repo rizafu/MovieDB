@@ -38,13 +38,13 @@ interface ApiService {
 
     @GET("movie/{movie_id}")
     suspend fun getMovieDetail(
-        @Path("movie_id") movieId: String,
+        @Path("movie_id") movieId: Int,
         @Query("language") language: String = "en-US"
     ): MovieModel
 
     @GET("movie/{movie_id}/reviews")
     suspend fun getMovieReviews(
-        @Path("movie_id") movieId: String,
+        @Path("movie_id") movieId: Int,
         @Query("page") page: Int = 1,
         @Query("language") language: String = "en-US"
     ): PageResultModel<MovieReviewModel>

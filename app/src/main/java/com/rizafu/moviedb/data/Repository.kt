@@ -35,12 +35,12 @@ interface Repository {
     ): Flow<PageResultModel<MovieOverviewModel>>
 
     suspend fun getMovieDetail(
-        movieId: String,
+        movieId: Int,
         language: String = "en-US"
     ): Flow<MovieModel>
 
     suspend fun getMovieReviews(
-        movieId: String,
+        movieId: Int,
         page: Int = 1,
         language: String = "en-US"
     ): Flow<PageResultModel<MovieReviewModel>>
@@ -89,13 +89,13 @@ class RepositoryImpl @Inject constructor(
         emit(apiService.getUpcoming(page, language))
     }.flowOn(Dispatchers.IO)
 
-    override suspend fun getMovieDetail(movieId: String, language: String): Flow<MovieModel> =
+    override suspend fun getMovieDetail(movieId: Int, language: String): Flow<MovieModel> =
         flow {
             emit(apiService.getMovieDetail(movieId, language))
         }.flowOn(Dispatchers.IO)
 
     override suspend fun getMovieReviews(
-        movieId: String,
+        movieId: Int,
         page: Int,
         language: String
     ): Flow<PageResultModel<MovieReviewModel>> = flow {

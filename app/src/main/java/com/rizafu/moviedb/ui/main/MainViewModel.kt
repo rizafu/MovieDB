@@ -54,7 +54,7 @@ class MainViewModel @Inject constructor(private val repository: Repository) : Ba
     ): List<ItemModel> {
         val newItems = moviesResult.results.map {
             MovieOverviewItemModel(
-                id = it.id.toString(),
+                id = it.id,
                 title = it.title,
                 subTitle = it.releaseDate.formattedDate,
                 description = it.overview,

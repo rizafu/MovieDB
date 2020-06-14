@@ -27,7 +27,7 @@ class DetailViewModel @Inject constructor(private val repository: Repository) : 
     private val movieTitle = MutableLiveData<String>()
     private var page: Int = 1
 
-    fun fetch(movieId: String, isLoadMore: Boolean = false) {
+    fun fetch(movieId: Int, isLoadMore: Boolean = false) {
         if (isLoadMore) page++ else page = 1
 
         job?.cancel()
@@ -47,13 +47,13 @@ class DetailViewModel @Inject constructor(private val repository: Repository) : 
         }
     }
 
-    private suspend fun fetchReviews(movieId: String): Flow<List<ItemModel>> {
+    private suspend fun fetchReviews(movieId: Int): Flow<List<ItemModel>> {
         return repository.getMovieReviews(movieId, page).map {
             movieReviewsMapToItem(it)
         }
     }
 
-    private suspend fun fetchDetailAndReview(movieId: String): Flow<List<ItemModel>> {
+    private suspend fun fetchDetailAndReview(movieId: Int): Flow<List<ItemModel>> {
         return repository.getMovieDetail(movieId)
             .flatMapConcat { movie ->
                 repository.isMovieFavorite(movie.id).map { it to movie }
@@ -95,7 +95,7 @@ class DetailViewModel @Inject constructor(private val repository: Repository) : 
     private fun movieDetailMapToItem(isFavorite: Boolean, moviesResult: MovieModel) =
         listOf<ItemModel>(
             MovieDetailItemModel(
-                id = moviesResult.id.toString(),
+                id = moviesResult.id,
                 title = moviesResult.title,
                 description = moviesResult.overview ?: "",
                 imageUrl = moviesResult.posterPath ?: "",

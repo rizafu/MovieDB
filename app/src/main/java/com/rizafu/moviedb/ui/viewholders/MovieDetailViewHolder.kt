@@ -10,7 +10,7 @@ import com.rizafu.moviedb.utils.ViewHolderFactory
 import com.rizafu.moviedb.utils.loadImageTMDB
 
 data class MovieDetailItemModel(
-    val id: String,
+    val id: Int,
     val imageUrl: String,
     val imageBackdropUrl: String,
     val title: String,

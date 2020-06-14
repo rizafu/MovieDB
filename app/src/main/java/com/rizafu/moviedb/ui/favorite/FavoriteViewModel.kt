@@ -44,7 +44,7 @@ class FavoriteViewModel @Inject constructor(private val repository: Repository) 
         } else {
             moviesEntity.map {
                 MovieOverviewItemModel(
-                    id = it.id.toString(),
+                    id = it.id,
                     title = it.title,
                     subTitle = it.releaseDate.formattedDate,
                     description = it.overview,

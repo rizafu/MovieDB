@@ -24,7 +24,7 @@ class DetailActivity : BaseActivity() {
             layoutInflater
         )
     }
-    private val movieId: String by lazy { intent.extras?.getString(MOVIE_ID, "") ?: "" }
+    private val movieId: Int by lazy { intent.extras?.getInt(MOVIE_ID, -1) ?: -1 }
 
     private lateinit var detailViewModel: DetailViewModel
 
@@ -96,7 +96,7 @@ class DetailActivity : BaseActivity() {
 
     companion object {
         private const val MOVIE_ID = "MOVIE_ID"
-        fun startActivity(context: Context, movieId: String) {
+        fun startActivity(context: Context, movieId: Int) {
             context.startActivity(Intent(context, DetailActivity::class.java).also {
                 it.putExtra(MOVIE_ID, movieId)
             })
