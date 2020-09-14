@@ -1,6 +1,5 @@
 package com.rizafu.moviedb.ui.favorite
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.rizafu.moviedb.data.EmptyType
 import com.rizafu.moviedb.data.Repository
@@ -52,12 +51,5 @@ class FavoriteViewModel @Inject constructor(private val repository: Repository) 
                 )
             }
         }
-    }
-
-    fun getItems(): LiveData<Resource<List<ItemModel>>> = items
-
-    override fun onCleared() {
-        super.onCleared()
-        job?.cancel()
     }
 }

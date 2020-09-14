@@ -1,5 +1,6 @@
 package com.rizafu.moviedb.ui.base
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.rizafu.moviedb.data.Resource
@@ -13,6 +14,8 @@ import kotlinx.coroutines.Job
 open class BaseViewModel : ViewModel() {
     protected val items = MutableLiveData<Resource<List<ItemModel>>>()
     protected var job: Job? = null
+
+    fun getItems(): LiveData<Resource<List<ItemModel>>> = items
 
     protected fun showError(throwable: Throwable) {
         throwable.printStackTrace()
@@ -34,5 +37,10 @@ open class BaseViewModel : ViewModel() {
             listOf(LoadingItemModel())
         }
         items.postValue(Resource.loading(loadingItems))
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        job?.cancel()
     }
 }

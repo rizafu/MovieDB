@@ -1,6 +1,5 @@
 package com.rizafu.moviedb.ui.main
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.rizafu.moviedb.data.EmptyType
 import com.rizafu.moviedb.data.MoviesOverviewType
@@ -76,11 +75,4 @@ class MainViewModel @Inject constructor(private val repository: Repository) : Ba
 
     fun isNoMoreDataToLoad(items: List<ItemModel>): Boolean =
         items.contains(EmptyItemModel(EmptyType.NO_MORE))
-
-    fun getItems(): LiveData<Resource<List<ItemModel>>> = items
-
-    override fun onCleared() {
-        super.onCleared()
-        job?.cancel()
-    }
 }

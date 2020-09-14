@@ -108,8 +108,6 @@ class DetailViewModel @Inject constructor(private val repository: Repository) : 
     fun isNoMoreDataToLoad(items: List<ItemModel>): Boolean =
         items.contains(EmptyItemModel(EmptyType.NO_MORE))
 
-    fun getItems(): LiveData<Resource<List<ItemModel>>> = items
-
     fun getMovieTitle(): LiveData<String> = movieTitle
 
     fun saveOrRemoveToFavorite(isFavorite: Boolean) {
@@ -133,10 +131,5 @@ class DetailViewModel @Inject constructor(private val repository: Repository) : 
                 )
             )
         }
-    }
-
-    override fun onCleared() {
-        super.onCleared()
-        job?.cancel()
     }
 }
