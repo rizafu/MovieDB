@@ -9,12 +9,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion(29)
+    compileSdkVersion(30)
     buildToolsVersion("29.0.3")
 
     defaultConfig {
         minSdkVersion(21)
-        targetSdkVersion(29)
+        targetSdkVersion(30)
 
         applicationId = "com.rizafu.moviedb"
         versionCode = 1
@@ -70,17 +70,17 @@ android {
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.72")
-    implementation("androidx.appcompat:appcompat:1.1.0")
-    implementation("androidx.core:core-ktx:1.3.0")
+    implementation("androidx.appcompat:appcompat:1.2.0")
+    implementation("androidx.core:core-ktx:1.3.1")
     implementation("android.arch.lifecycle:extensions:1.1.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.5")
 
-    implementation("androidx.constraintlayout:constraintlayout:1.1.3")
+    implementation("androidx.constraintlayout:constraintlayout:2.0.1")
     implementation("com.jakewharton.threetenabp:threetenabp:1.2.4")
-    implementation("com.google.android.material:material:1.1.0")
+    implementation("com.google.android.material:material:1.2.1")
     implementation("androidx.recyclerview:recyclerview:1.1.0")
     implementation("com.facebook.shimmer:shimmer:0.5.0")
     implementation("androidx.cardview:cardview:1.0.0")
@@ -104,8 +104,8 @@ dependencies {
     kapt("se.ansman.kotshi:compiler:2.2.3")
 
     testImplementation("junit:junit:4.13")
-    androidTestImplementation("androidx.test.ext:junit:1.1.1")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
+    androidTestImplementation("androidx.test.ext:junit:1.1.2")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
     testImplementation("org.jetbrains.kotlin:kotlin-reflect:1.3.72")
     testImplementation("org.jetbrains.kotlin:kotlin-test:1.3.72")
     testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0")
