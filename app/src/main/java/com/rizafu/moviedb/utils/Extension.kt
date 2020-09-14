@@ -1,6 +1,5 @@
 package com.rizafu.moviedb.utils
 
-import android.content.Context
 import android.content.res.Resources
 import android.view.View
 import android.widget.ImageView
@@ -18,7 +17,6 @@ import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
 fun RecyclerView.setupLinearVertical(
-    context: Context,
     adapter: RecyclerViewListAdapter,
     onItemClick: (view: View, item: ItemModel) -> Unit
 ) {

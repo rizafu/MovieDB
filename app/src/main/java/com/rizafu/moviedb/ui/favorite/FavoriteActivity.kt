@@ -46,7 +46,6 @@ class FavoriteActivity : BaseActivity() {
         supportActionBar?.title = getString(R.string.favorite)
 
         binding.recyclerView.setupLinearVertical(
-            this,
             adapter,
             onItemClick = { _: View, itemModel: ItemModel ->
                 when (itemModel) {

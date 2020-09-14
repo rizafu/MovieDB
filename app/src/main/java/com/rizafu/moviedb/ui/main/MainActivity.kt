@@ -43,8 +43,8 @@ class MainActivity : BaseActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-        return when (item?.itemId) {
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
             R.id.menu_mode -> {
                 val mode =
                     if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
@@ -75,7 +75,6 @@ class MainActivity : BaseActivity() {
 
     private fun setupUI() {
         binding.recyclerView.setupLinearVertical(
-            this,
             adapter,
             onItemClick = { _: View, itemModel: ItemModel ->
                 when (itemModel) {

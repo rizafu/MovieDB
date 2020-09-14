@@ -53,7 +53,6 @@ class DetailActivity : BaseActivity() {
             title = ""
         }
         binding.recyclerView.setupLinearVertical(
-            this,
             adapter,
             onItemClick = { _: View, itemModel: ItemModel ->
                 when (itemModel) {
